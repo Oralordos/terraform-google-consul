@@ -18,6 +18,10 @@ output "instance_group_name" {
   value = "${google_compute_instance_group_manager.consul_server.name}"
 }
 
+output "instance_group_full_url" {
+  value = "${google_compute_instance_group_manager.consul_server.instance_group}"
+}
+
 output "instance_template_url" {
   value = "${data.template_file.compute_instance_template_self_link.rendered}"
 }
