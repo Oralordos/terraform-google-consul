@@ -97,6 +97,16 @@ variable "allowed_inbound_tags_dns" {
   default = []
 }
 
+variable "port_name" {
+  description = "The name of a named port to add to the instance group"
+  default = ""
+}
+
+variable "port_number" {
+  description = "The port number to add to the instance group"
+  default = ""
+}
+
 # Metadata
 
 variable "metadata_key_name_for_cluster_size" {

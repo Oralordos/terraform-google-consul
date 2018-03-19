@@ -29,6 +29,11 @@ resource "google_compute_instance_group_manager" "consul_server" {
   target_pools = ["${var.instance_group_target_pools}"]
   target_size  = "${var.cluster_size}"
 
+  named_port {
+    name = "${port_name}"
+    port = "${port_number}"
+  }
+
   depends_on = ["google_compute_instance_template.consul_server_public", "google_compute_instance_template.consul_server_private"]
 }
 
